@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif; }
+
+
+#loader-bg, #loader-wrap {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+#loader-wrap.hide {
+  display: none;
+}
+
+#loader-wrap {
+    position: fixed;
+    z-index: 4;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+#loader-bg {
+    position: absolute;
+    background: #0F1536;
+}
+
+#loader, #loader-txt {
+    position: relative;
+}
+
+#loader-txt {
+    letter-spacing: .35em;
+    line-height: 180%;
+    color: #fff;
+    overflow: hidden;
+}
+
+#loader-txt div {
+    float: left;
+    -webkit-transform: translate3d(0,100%,0);
+    transform: translate3d(0,100%,0);
+}
+
+#loader-line-container {
+    margin: 13px auto 0;
+    width: 78px;
+    height: 2px;
+}
+
+#loader-line-container {
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+}
+
+#loader-line, #loader-line-wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+#loader-line-wrap {
+    background: #6a735b;
+    overflow: hidden;
+}
+
+#loader-line {
+    background: #fff;
+    -webkit-transform: translate3d(100%,0,0);
+    transform: translate3d(100%,0,0);
+}
