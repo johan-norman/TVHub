@@ -33,12 +33,14 @@ class App extends Component {
   };
 
   componentDidMount() {
-    setTimeout(() => this.setState({ loading: false }), 1500); // simulates loading of data
+    //setTimeout(() => this.setState({ loading: false }), 1500); // simulates loading of data
+    setTimeout(() => this.setState({ loading: false }), 0); // simulates loading of data
 
     //loader
     var letters = document.getElementById("loader-txt").childNodes;
     for (var i = 0; i < letters.length; i++) {
-      console.log("lol", letters[i]);
+      //letters[i].classList.add('animated');
+      //console.log(letters[1].classList[0]);
     }
 
   }
@@ -47,7 +49,7 @@ class App extends Component {
     const { loading } = this.state;
 
     if(!loading) { // if your component doesn't have to wait for async data, remove this block
-      //document.getElementById("loader-wrap").className = "hide";
+      document.getElementById("loader-wrap").className = "hide";
     }
 
     return (

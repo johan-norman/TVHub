@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import CenterWrapper from '../CenterWrapper'
 
 class CompareTable extends Component {
   componentDidMount() {
@@ -16,7 +17,9 @@ class CompareTable extends Component {
   render() {
     return (
       <section id="c--CompareTable-wrapper">
-        <p>Jämförelse tabell</p>
+        <CenterWrapper>
+          <p>Jämförelse tabell</p>
+        </CenterWrapper>
       </section>
     )
   }

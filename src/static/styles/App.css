@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
 
-body {
+body, html {
   margin: 0;
   padding: 0;
-  font-family: 'Lato', sans-serif; }
+  font-family: 'Lato', sans-serif;
+  background: #0F1536;
+  color: #fff;
+}
 
 
 #loader-bg, #loader-wrap {
@@ -45,12 +48,25 @@ body {
     line-height: 180%;
     color: #fff;
     overflow: hidden;
+    font-weight: 300;
 }
 
 #loader-txt div {
     float: left;
-    -webkit-transform: translate3d(0,100%,0);
-    transform: translate3d(0,100%,0);
+    transform: translate3d(0,0%,0);
+}
+
+#loader-txt div.animated {
+  -webkit-animation: 1600ms glideUp infinite alternate ease-in-out;
+  -moz-animation: 1600ms glideUp infinite alternate ease-in-out;
+  -ms-animation: 1600ms glideUp infinite alternate ease-in-out;
+  -o-animation: 1600ms glideUp infinite alternate ease-in-out;
+  animation: 1600ms glideUp infinite alternate ease-in-out;
+}
+
+@keyframes glideUp {
+  0% { transform: translate3d(0px, 0%, 0px); }
+  100% { transform: translate3d(0px, 100%, 0px); }
 }
 
 #loader-line-container {

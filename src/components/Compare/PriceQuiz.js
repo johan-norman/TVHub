@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import CenterWrapper from '../CenterWrapper'
 
 class PriceQuiz extends Component {
   componentDidMount() {
@@ -16,8 +17,10 @@ class PriceQuiz extends Component {
   render() {
     return (
       <section id="c--PriceQuiz-wrapper">
-        <h2>Kan jag få tv hub?</h2>
-        <p>Lorem ipsum dolor sit amet..</p>
+        <CenterWrapper>
+          <h2>Kan jag få tv hub?</h2>
+          <p>Lorem ipsum dolor sit amet..</p>
+        </CenterWrapper>
       </section>
     )
   }
