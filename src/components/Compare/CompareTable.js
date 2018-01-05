@@ -92,6 +92,19 @@ const StyledCompareTable = styled.section`
 
 `;
 
+function ResetButton(props) {
+
+  if (!props.visible) {
+    return null;
+  }
+
+  return (
+    <div className='reset-table'>
+      <button className="btn-reset-table" onClick={props.onClick}>Återställ tabell</button>
+    </div>
+  );
+}
+
 class CompareTable extends Component {
   constructor () {
     super();
@@ -101,6 +114,7 @@ class CompareTable extends Component {
       tvmodulIsHidden: false,
       appletvIsHidden: false
     }
+    this.resetTable = this.resetTable.bind(this);
   }
 
   hideTivo () { this.setState({ tivoIsHidden: !this.state.tivoIsHidden }) }
@@ -109,34 +123,27 @@ class CompareTable extends Component {
   hideAppletv () { this.setState({ appletvIsHidden: !this.state.appletvIsHidden }) }
 
   componentDidUpdate() {
-    console.log(this.state);
-  }
-
-  componentDidMount() {
-
-  }
-
-  componentWillUnmount() {
-
-  }
-
-  handleScroll(event) {
-    // do something like call `this.setState`
-    // access window.scrollY etc
+    
   }
 
   resetTable() {
-    console.log("reset table!");
+    this.setState({
+      tivoIsHidden: false,
+      digitalboxIsHidden: false,
+      tvmodulIsHidden: false,
+      appletvIsHidden: false
+    })
   }
 
   render() {
+
+    const showResetButton = this.state.tivoIsHidden || this.state.digitalboxIsHidden || this.state.tvmodulIsHidden || this.state.appletvIsHidden;
+
     return (
       <StyledCompareTable>
         <CenterWrapper>
 
-          {this.state.tivoIsHidden && <div className='reset-table'>
-              <button className="btn-reset-table" onClick={this.resetTable()}>Återställ tabell</button>
-          </div>}
+          <ResetButton onClick={this.resetTable} visible={showResetButton} />
 
           {/* Table Head */}
           <Flex pt="100px">

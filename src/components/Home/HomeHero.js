@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import CenterWrapper from '../CenterWrapper'
+import GSAP from 'react-gsap-enhancer'
 
 const StyledHero = styled.section`
   height: 40vh;
@@ -28,26 +29,35 @@ const StyledHero = styled.section`
   }
 `;
 
+function appearAnim({target}) {
+
+  const headline = target.find({className: 'hero-main-headline'})
+
+   return TweenMax.from(headline, 3, { // eslint-disable-line
+      delay: 5,
+      y: -34,
+      opacity: 0,
+      scale: 0.82,
+      ease: "Back.easeOut"
+   })
+}
+
 class HomeHero extends Component {
   componentDidMount() {
-
+    this.addAnimation(appearAnim);
   }
 
   componentWillUnmount() {
 
   }
 
-  handleScroll(event) {
-    // do something like call `this.setState`
-    // access window.scrollY etc
-  }
   render() {
     return (
       <StyledHero>
 
           <div className="h--hero-text">
             <h2>Com Hem TV Hub</h2>
-            <h1>En världsnyhet inom hemmaunderhållning</h1>
+            <h1 className="hero-main-headline">En världsnyhet inom hemmaunderhållning</h1>
           </div>
           <CenterWrapper>
         </CenterWrapper>
@@ -56,4 +66,4 @@ class HomeHero extends Component {
   }
 }
 
-export default HomeHero;
+export default GSAP()(HomeHero);
