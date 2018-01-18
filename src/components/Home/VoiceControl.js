@@ -3,7 +3,7 @@ import SectionNumber from '../SectionNumber.js'
 import PrimaryButton from '../PrimaryButton.js'
 import ArrowLink from '../ArrowLink.js'
 import CenterWrapper from '../CenterWrapper'
-import { Flex, Box } from 'grid-styled'
+//import { Flex, Box } from 'grid-styled'
 import styled from 'styled-components'
 
 const StyledVoiceWrapper = styled.section`

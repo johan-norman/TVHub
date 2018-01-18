@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import NavLink from '../components/NavLink'
 import BuyButton from '../components/BuyButton'
 import Logo from '../components/images/ComHem_Logotype@2x.png'

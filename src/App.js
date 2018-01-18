@@ -7,6 +7,7 @@ import Compare from './views/Compare'
 import NoMatch from './views/NoMatch'
 import Wrapper from './components/Wrapper'
 import PageNav from './components/PageNav'
+import { TweenMax, TimelineMax } from 'gsap'
 
 const title = "Com Hem TV Hub"
 
@@ -33,15 +34,27 @@ class App extends Component {
   };
 
   componentDidMount() {
-    //setTimeout(() => this.setState({ loading: false }), 1500); // simulates loading of data
-    setTimeout(() => this.setState({ loading: false }), 0); // simulates loading of data
 
-    //loader
-    var letters = document.getElementById("loader-txt").childNodes;
-    for (var i = 0; i < letters.length; i++) {
-      //letters[i].classList.add('animated');
-      //console.log(letters[1].classList[0]);
-    }
+    // Loader
+    var loaderLine = document.getElementById("loader-line"),
+        loaderLineContainer = document.getElementById("loader-line-container"),
+        loaderTxt = document.getElementById("loader-txt").childNodes,
+        loaderWrapper = document.getElementById("loader"),
+        loaderBg = document.getElementById("loader-bg"),
+        loaderTl = new TimelineMax({ onComplete: this.loadContent });
+
+        loaderTl
+          .staggerFrom(loaderTxt, 1, {y: 100, autoAlpha:0, ease:"Back.easeIn"}, 0.03)
+          .from(loaderLineContainer, 5, {x: -100, autoAlpha:0, ease: "Back.easeIn"}, '-=4')
+          .from(loaderLine, 5, {x: -100, ease: "Back.easeIn"}, '-=4');
+
+  }
+
+  loadContent() {
+    console.log("load Content");
+    // Fade out loader
+    
+    // Fade in Content
 
   }
 

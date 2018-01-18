@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import CenterWrapper from '../CenterWrapper'
-import GSAP from 'react-gsap-enhancer'
+import { TweenMax, TimelineMax } from 'gsap'
 
 const StyledHero = styled.section`
   height: 40vh;
@@ -16,7 +16,14 @@ const StyledHero = styled.section`
     letter-spacing: 0;
     text-transform: none;
     text-align: center;
+    overflow: hidden;
   }
+
+  .letter {
+    display: inline-block;
+    line-height: 1em;
+  }
+
   h1 {
     text-align: center;
     text-transform: uppercase;
@@ -29,22 +36,21 @@ const StyledHero = styled.section`
   }
 `;
 
-function appearAnim({target}) {
-
-  const headline = target.find({className: 'hero-main-headline'})
-
-   return TweenMax.from(headline, 3, { // eslint-disable-line
-      delay: 5,
-      y: -34,
-      opacity: 0,
-      scale: 0.82,
-      ease: "Back.easeOut"
-   })
-}
+const WrappedLetters = function(props) {
+  var letterArr = [];
+  props.text.split('').map((item, key) => {
+    letterArr.push(<span className="letter" key={key}>{item}</span>);
+  })
+  return letterArr;
+};
 
 class HomeHero extends Component {
   componentDidMount() {
-    this.addAnimation(appearAnim);
+    var tl = new TimelineMax();
+
+    tl
+      .staggerFrom("#hero--text-01 .letter", 1, {y: 100, opacity:0, ease:"Back.easeIn"}, 0.05)
+      .from("#hero--text-02", 2, {y: 100, opacity:0, ease:"Back.easeIn"}, '-=1.5');
   }
 
   componentWillUnmount() {
@@ -54,16 +60,15 @@ class HomeHero extends Component {
   render() {
     return (
       <StyledHero>
-
           <div className="h--hero-text">
-            <h2>Com Hem TV Hub</h2>
-            <h1 className="hero-main-headline">En världsnyhet inom hemmaunderhållning</h1>
+            <h2 id="hero--text-01"><WrappedLetters text="Com Hem TV Hub" /></h2>
+            <h1 id="hero--text-02">En världsnyhet inom hemmaunderhållning</h1>
           </div>
-          <CenterWrapper>
+        <CenterWrapper>
         </CenterWrapper>
       </StyledHero>
     )
   }
 }
 
-export default GSAP()(HomeHero);
+export default HomeHero

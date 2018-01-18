@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import Page from '../components/Page'
 import CenterWrapper from '../components/CenterWrapper'
 import { Flex, Box } from 'grid-styled'
-import styled from 'styled-components'
+//import styled from 'styled-components'
 
 export default () => (
   <Page>

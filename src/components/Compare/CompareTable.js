@@ -3,7 +3,7 @@ import CenterWrapper from '../CenterWrapper'
 import { Flex, Box } from 'grid-styled'
 import styled from 'styled-components'
 import CheckMarkIcon from '../images/checkmark.svg'
-import CrossIcon from '../images/cross.svg'
+//import CrossIcon from '../images/cross.svg'
 
 const StyledCompareTable = styled.section`
     .product-table-head {
@@ -123,7 +123,7 @@ class CompareTable extends Component {
   hideAppletv () { this.setState({ appletvIsHidden: !this.state.appletvIsHidden }) }
 
   componentDidUpdate() {
-    
+
   }
 
   resetTable() {
@@ -205,7 +205,7 @@ class CompareTable extends Component {
             <Box flex='1 0 0' px={15} pt="0px">
               <div className="product-table-desc">
                 <p>Linjär-tv och tv-guide 1</p>
-                <a href="#">Läs mer</a>
+                <a href="/features">Läs mer</a>
               </div>
             </Box>
 
@@ -246,7 +246,7 @@ class CompareTable extends Component {
             <Box flex='1 0 0' px={15} pt="0px">
               <div className="product-table-desc">
                 <p>Linjär-tv och tv-guide</p>
-                <a href="#">Läs mer</a>
+                <a href="/features">Läs mer</a>
               </div>
             </Box>
 
@@ -287,7 +287,7 @@ class CompareTable extends Component {
             <Box flex='1 0 0' px={15} pt="0px">
               <div className="product-table-desc">
                 <p>Linjär-tv och tv-guide</p>
-                <a href="#">Läs mer</a>
+                <a href="/features">Läs mer</a>
               </div>
             </Box>
 
@@ -328,7 +328,7 @@ class CompareTable extends Component {
             <Box flex='1 0 0' px={15} pt="0px">
               <div className="product-table-desc">
                 <p>Linjär-tv och tv-guide</p>
-                <a href="#">Läs mer</a>
+                <a href="/features">Läs mer</a>
               </div>
             </Box>
 
@@ -369,7 +369,7 @@ class CompareTable extends Component {
             <Box flex='1 0 0' px={15} pt="0px">
               <div className="product-table-desc">
                 <p>Linjär-tv och tv-guide</p>
-                <a href="#">Läs mer</a>
+                <a href="/features">Läs mer</a>
               </div>
             </Box>
 
@@ -410,7 +410,7 @@ class CompareTable extends Component {
             <Box flex='1 0 0' px={15} pt="0px">
               <div className="product-table-desc">
                 <p>Linjär-tv och tv-guide</p>
-                <a href="#">Läs mer</a>
+                <a href="/features">Läs mer</a>
               </div>
             </Box>
 
@@ -451,7 +451,7 @@ class CompareTable extends Component {
             <Box flex='1 0 0' px={15} pt="0px">
               <div className="product-table-desc">
                 <p>Linjär-tv och tv-guide</p>
-                <a href="#">Läs mer</a>
+                <a href="/features">Läs mer</a>
               </div>
             </Box>
 
@@ -492,7 +492,7 @@ class CompareTable extends Component {
             <Box flex='1 0 0' px={15} pt="0px">
               <div className="product-table-desc">
                 <p>Linjär-tv och tv-guide</p>
-                <a href="#">Läs mer</a>
+                <a href="/features">Läs mer</a>
               </div>
             </Box>
 
@@ -533,7 +533,7 @@ class CompareTable extends Component {
             <Box flex='1 0 0' px={15} pt="0px">
               <div className="product-table-desc">
                 <p>Linjär-tv och tv-guide</p>
-                <a href="#">Läs mer</a>
+                <a href="/features">Läs mer</a>
               </div>
             </Box>
 
